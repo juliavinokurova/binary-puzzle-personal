@@ -1,3 +1,9 @@
 * {
   font-family: system;
 }
+
+html {
+  margin: 0px;
+  padding: 0px;
+  background-color: #1c2133;
+}
