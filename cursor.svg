@@ -2,7 +2,7 @@
 <svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>cursor</title>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.301121911">
-        <g id="cursor" fill="#000000" fill-rule="nonzero">
+        <g id="cursor" fill="#ffffff" fill-rule="nonzero">
             <g id="Location-Circle">
                 <circle id="Outer" cx="7.5" cy="7.5" r="7.5"></circle>
             </g>
