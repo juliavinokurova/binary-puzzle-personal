@@ -1,9 +1,13 @@
 * {
+  background-color: #1c2133;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: system-ui, Helvetica, Arial, sans-serif !important;
+  cursor: url('cursor.svg') 7.5 7.5, auto;
 }
 
 html {
   margin: 0px;
   padding: 0px;
-  background-color: #1c2133;
+  width: 100%;
 }
