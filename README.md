@@ -1,3 +1,3 @@
-# binary-puzzle
+# Binary Puzzle
 
 Welcome the the Binary Puzzle github!
