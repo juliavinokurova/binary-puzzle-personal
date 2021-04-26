@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Binary Puzzle</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<script>
+var G1 = [1, null, 0, null, 0, 0, null, 1, null, 0, 0, null, null, null, null, null, null, 0, 0, null, null, 1, null, null, 1, 0, null, 1, 1, null, null, 0, null, null, 1, 1];
+var G2 = [null, 1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+var G3 = [null, null, 1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+
+function loadGrid(G) {                    // load 6x6 test games
+  var Row = 6;                        // declare # of rows
+  var Col = 6;                        // declare # of columns
+  var Grid = [];                      // declare Grid as an array
+
+  for (let i = 0; i < Row; i++) {
+    document.getElementById('R1' + 'B' + (i + 1)).value = G[i];  // loop 1st 6 elements for Row A
+  }
+  for (let i = 0; i < Row; i++) {
+    document.getElementById('R2' + 'B' + (i + 1)).value = G[Col + i];  // loop 1st 6 elements for Row A
+  }
+  for (let i = 0; i < Row; i++) {
+    document.getElementById('R3' + 'B' + (i + 1)).value = G[2*Col + i];  // loop 1st 6 elements for Row A
+  }
+  for (let i = 0; i < Row; i++) {
+    document.getElementById('R4' + 'B' + (i + 1)).value = G[3 * Col + i];  // loop 1st 6 elements for Row A
+  }
+  for (let i = 0; i < Row; i++) {
+    document.getElementById('R5' + 'B' + (i + 1)).value = G[4 * Col + i];  // loop 1st 6 elements for Row A
+  }
+  for (let i = 0; i < Row; i++) {
+    document.getElementById('R6' + 'B' + (i + 1)).value = G[5 * Col + i];  // loop 1st 6 elements for Row A
+  }
+
+}
+</script>
+<style>
+
+  * {
+    padding: 0px;
+  }
+  .puzzle, .buttonStyle {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    color: #0B1AB8;
+    vertical-align: middle;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 2px solid red;
+    /* border: 2px solid #b8daf6; */
+  }
+
+  .puzzle {
+  }
+
+  .buttonStyle {
+    /* color: #f9929d; */
+    background-color: transparent;
+  }
+</style>
+<body>
+  <h1>Binary Puzzle</h1>
+  <h2>v1.06</h2>
+  <br></br>
+  <table class="puzzle">
+    <tr>
+      <td><input id="R1B1" type="button" class="buttonStyle"/></td>
+      <td><input id="R1B2" type="button" class="buttonStyle"/></td>
+      <td><input id="R1B3" type="button" class="buttonStyle"/></td>
+      <td><input id="R1B4" type="button" class="buttonStyle"/></td>
+      <td><input id="R1B5" type="button" class="buttonStyle"/></td>
+      <td><input id="R1B6" type="button" class="buttonStyle"/></td>
+    </tr>
+    <tr>
+      <td><input id="R2B1" type="button" class="buttonStyle"/></td>
+      <td><input id="R2B2" type="button" class="buttonStyle"/></td>
+      <td><input id="R2B3" type="button" class="buttonStyle"/></td>
+      <td><input id="R2B4" type="button" class="buttonStyle"/></td>
+      <td><input id="R2B5" type="button" class="buttonStyle"/></td>
+      <td><input id="R2B6" type="button" class="buttonStyle"/></td>
+    </tr>
+    <tr>
+      <td><input id="R3B1" type="button" class="buttonStyle"/></td>
+      <td><input id="R3B2" type="button" class="buttonStyle"/></td>
+      <td><input id="R3B3" type="button" class="buttonStyle"/></td>
+      <td><input id="R3B4" type="button" class="buttonStyle"/></td>
+      <td><input id="R3B5" type="button" class="buttonStyle"/></td>
+      <td><input id="R3B6" type="button" class="buttonStyle"/></td>
+    </tr>
+    <tr>
+      <td><input id="R4B1" type="button" class="buttonStyle"/></td>
+      <td><input id="R4B2" type="button" class="buttonStyle"/></td>
+      <td><input id="R4B3" type="button" class="buttonStyle"/></td>
+      <td><input id="R4B4" type="button" class="buttonStyle"/></td>
+      <td><input id="R4B5" type="button" class="buttonStyle"/></td>
+      <td><input id="R4B6" type="button" class="buttonStyle"/></td>
+    </tr>
+    <tr>
+      <td><input id="R5B1" type="button" class="buttonStyle"/></td>
+      <td><input id="R5B2" type="button" class="buttonStyle"/></td>
+      <td><input id="R5B3" type="button" class="buttonStyle"/></td>
+      <td><input id="R5B4" type="button" class="buttonStyle"/></td>
+      <td><input id="R5B5" type="button" class="buttonStyle"/></td>
+      <td><input id="R5B6" type="button" class="buttonStyle"/></td>
+    </tr>
+    <tr>
+      <td><input id="R6B1" type="button" class="buttonStyle"/></td>
+      <td><input id="R6B2" type="button" class="buttonStyle"/></td>
+      <td><input id="R6B3" type="button" class="buttonStyle"/></td>
+      <td><input id="R6B4" type="button" class="buttonStyle"/></td>
+      <td><input id="R6B5" type="button" class="buttonStyle"/></td>
+      <td><input id="R6B6" type="button" class="buttonStyle"/></td>
+    </tr>
+  </table>
+</body>
+</html>
