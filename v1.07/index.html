@@ -14,39 +14,30 @@ function loadGrid(G) {                    // load 6x6 test games
   var Col = 6;                        // declare # of columns
   var Grid = [];                      // declare Grid as an array
 
-  for (let i = 0; i < Row; i++) {
-    document.getElementById('R1' + 'B' + (i + 1)).value = G[i];  // loop 1st 6 elements for Row A
-  }
-  for (let i = 0; i < Row; i++) {
-    document.getElementById('R2' + 'B' + (i + 1)).value = G[Col + i];  // loop 1st 6 elements for Row A
-  }
-  for (let i = 0; i < Row; i++) {
-    document.getElementById('R3' + 'B' + (i + 1)).value = G[2*Col + i];  // loop 1st 6 elements for Row A
-  }
-  for (let i = 0; i < Row; i++) {
-    document.getElementById('R4' + 'B' + (i + 1)).value = G[3 * Col + i];  // loop 1st 6 elements for Row A
-  }
-  for (let i = 0; i < Row; i++) {
-    document.getElementById('R5' + 'B' + (i + 1)).value = G[4 * Col + i];  // loop 1st 6 elements for Row A
-  }
-  for (let i = 0; i < Row; i++) {
-    document.getElementById('R6' + 'B' + (i + 1)).value = G[5 * Col + i];  // loop 1st 6 elements for Row A
+  for (let j = 0; j < Col; j++) {
+    for (let i = 0; i < Row; i++) {
+      document.getElementById('R' + (j + 1) + 'B' + (i + 1)).value = G[j * Col + i];
+    }
   }
 
-  // creates the array
+  // creates the 1D array
   var puzzleArray = [];
   for (var j = 0; j < Col; j++) {
     for (let i = 0; i < Row; i++) {
       puzzleArray.push(document.getElementById('R' + (j + 1) + 'B' + (i + 1)).value);
     }
   }
-  document.getElementById("hello").innerHTML = puzzleArray.join(" ");
+  document.getElementById("1Darray").innerHTML = puzzleArray.join(" ");
 
-  for (let u = 0; u < 36; u++) {
-    if (puzzleArray[u] = "null") {
-      puzzleArray[u].push("nothing");
+  // creates the 2D array
+  var puzzleArray = [];
+  for (var j = 0; j < Col; j++) {
+    for (let i = 0; i < Row; i++) {
+      puzzleArray.push(document.getElementById('R' + (j + 1) + 'B' + (i + 1)).value);
     }
   }
+  document.getElementById("2Darray").innerHTML = puzzleArray.join(" ").slice(0, 6);
+
 }
 </script>
 <style>
@@ -77,9 +68,12 @@ function loadGrid(G) {                    // load 6x6 test games
 </style>
 <body  onload="loadGrid(G1)">
   <h1>Binary Puzzle</h1>
-  <h2>v1.06</h2>
+  <h2>v1.07</h2>
   <br></br>
-  <p id="hello" onclick="hey()">Array</p>
+  <h3>1D Array</h3>
+  <p id="1Darray">Array</p>
+  <h3>2D Array</h3>
+  <p id="2Darray">Array</p>
   <table class="puzzle">
     <tr>
       <td><input id="R1B1" type="button" class="buttonStyle"/></td>
