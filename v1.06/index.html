@@ -3,6 +3,7 @@
 <head>
   <title>Binary Puzzle</title>
   <link rel="stylesheet" href="main.css">
+  <link rel="shortcut icon" href="favicon.png"/>
 </head>
 <script>
 var G1 = [1, null, 0, null, 0, 0, null, 1, null, 0, 0, null, null, null, null, null, null, 0, 0, null, null, 1, null, null, 1, 0, null, 1, 1, null, null, 0, null, null, 1, 1];
@@ -16,7 +17,7 @@ function loadGrid(G) {
 
   for (let j = 0; j < Col; j++) {
     for (let i = 0; i < Row; i++) {
-      document.getElementById('R' + (j + 1) + 'B' + (i + 1)).value = G[j * Col + i];    
+      document.getElementById('R' + (j + 1) + 'B' + (i + 1)).value = G[j * Col + i];
     }
   }
 }
